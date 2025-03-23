@@ -5,12 +5,21 @@
     padding: 0;
     box-sizing: border-box;
     font-family: "Poppins", sans-serif;
+    user-select: none;
+    color: var(--basis-color);
 }
 /*_____________________*/
 :root{
     --body-color:#DDD;
     --header-color:#FFF;
-    --section-color:#DDD;
+    --back-btn:#fff;
+    --dr-shadow:#1c1c1e;
+    --dr-color:#f8f8f8;
+    --log-color:#270aca;
+    --basis-color:#1c1c1c;
+    --btn-mode:#dddf;
+    --i-color:#fff;
+    --i-mode:#050505;
 }
 /*___________-*/
 body{
@@ -18,6 +27,27 @@ body{
     display: grid;
     grid-template-rows: 30vh 1fr;
     min-height: 100vh;
+}
+
+body.Dark{
+    --body-color:#201f1f;
+    --header-color:#000000;
+    --section-color:#DDD;
+    --back-btn:#000000;
+    --dr-shadow:#1c1c1e;
+    --dr-color:#f8f8f8;
+    --log-color:#ffffff;
+    --basis-color:#f5e9e9;
+    --btn-mode:rgb(95, 94, 94);
+    --i-color:#fff;
+    --i-mode:#DDD;
+}
+
+body.Dark .bx-sun{
+    opacity: 1;
+}
+body.Dark .bx-moon{
+    opacity: 0;
 }
 /*______________*/
 .title-icon{
@@ -35,53 +65,94 @@ body{
 }
 .cs{
     font-size: 80px;
-    color:#270aca;
+    color:var(--log-color);
 }
 /*_________________--*/
 .exersice-css{
-    background: var(--section-color);
+    background: #ffffff00;
     grid-row: 2/3;
     display: grid;
+    
+    grid-template-columns: repeat(auto-fill,
+    minmax(300px, 1fr));
     justify-content: center;
     align-items: center;
-    grid-template-columns: repeat(auto-fit,
-    minmax(300px, 1fr));
 }
-.exersice-css button{
+.exersice-css a{
     padding: 20px;
+    background: var(--back-btn);
     min-width: 150px;
     margin: auto;
     border: none;
     border-radius: 10px;
-    filter: drop-shadow(5px  3px 2px  #000) ;
+    filter: drop-shadow(5px  3px 2px  var(--dr-shadow));
     transition: .3s ease-in-out;
     position: relative;
     overflow: hidden;
+    margin: auto;
+    padding: 25px; 
 }
 .nameBtn{
     z-index: 100;
     font-weight: 500 ;
     font-style: italic;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
+    transition: .3s ease-in-out;
 }
-button:hover .nameBtn{
-    font-style: normal;
-
+a:hover .nameBtn{
+    left: 40%;
+    color: var(--dr-color);
 }
 .btn1::after{
     content: "";
     position: absolute;
     width: 100%;
     height: 100%;
-    background: #26e029;
+    background: #20b923;
     top: 0;
     left: -100%;
     z-index: -1;
+    transition: .29s ease-out;
+    border-radius: 10px;
 }
 .btn1:hover::after{
     left: 0;
 }
-.exersice-css button:hover{
-    filter: drop-shadow(0px  0px 2px  #000) ;
+.btn2::after{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #e03c26;
+    top: 0;
+    left: -100%;
+    z-index: -1;
+    transition: .29s ease-out;
+    border-radius: 10px;
+}
+.btn2:hover::after{
+    left: 0;
+}
+.btn3::after{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #8626e0;
+    top: 0;
+    left: -100%;
+    z-index: -1;
+    transition: .29s ease-out;
+    border-radius: 10px;
+}
+.btn3:hover::after{
+    left: 0;
+}
+.exersice-css a:hover{
+    filter: drop-shadow(0px  0px 2px  var(--dr-shadow)) ;
 
 }
 
@@ -91,11 +162,32 @@ button:hover .nameBtn{
     transform: translateY(-50%);
     left:  -20%;
     transition: .3s ease-in-out;
-    color: var(--body-color);
-    filter: drop-shadow(0px  0px 2px  #000) ;
+    color: var(--i-color);
     
     font-size: 19px;
 }
-.exersice-css button:hover .bxs-pointer{
+.exersice-css a:hover .bxs-pointer{
     left: 80%;
+}
+/*__________________________________----------------*/
+
+.mode-dl{
+    position: fixed;
+    background: var(--btn-mode);
+    padding: 20px;
+    top: 10px;
+    right: 20px;
+    border-radius: 10px;
+}
+.mode-dl i{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
+}
+.bx-sun{
+    opacity: 0;
+}
+.iMode{
+    color: var(--i-mode);
 }
