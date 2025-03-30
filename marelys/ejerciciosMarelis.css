@@ -1,0 +1,62 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/*Colores de la Raiz*/
+:root{
+    --color-body:#DDD;
+    --color-texto:#1c1c1c;
+    --color-head:#FFF;
+
+}
+/*__________________________-*/
+body{
+    background: var(--color-body);
+    display: grid;
+    grid-template-rows: 100px auto;
+    grid-template-columns: 1fr;
+}
+/*Contenido del header*/
+.head{
+    background: var(--color-head);
+    grid-row: 1/2;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.head .menu-list{
+    display: flex;
+    gap: 2rem;
+    list-style-type: none;
+}
+.head .title {
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.head .title .bxs-ghost{
+    font-size: 30px;
+}
+/*Contenido del main*/
+.main{
+    grid-row: 2/3;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,
+    minmax(220px,1fr));
+    gap: 1rem;
+    justify-content: space-around;
+}
+.main section{
+    min-width: 200px; 
+    min-height: 300px;
+    padding: 10px;
+    border: solid #000;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
