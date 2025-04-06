@@ -1,0 +1,106 @@
+/*Fuente de letra */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+/*_____________________________Universal*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    color: var(--color-texto);
+}
+/*Colores de la Raiz*/
+:root{
+    --color-body:#DDD;
+    --color-texto:#1c1c1c;
+    --color-head:#FFF;
+    --btn-example:#fff;
+    --btn-exHover:#e41212;
+    --bck-container:#37e963;
+}
+/*__________________________-*/
+body{
+    background: var(--color-body);
+    display: grid;
+    grid-template-rows: 100px auto;
+    grid-template-columns: 1fr;
+}
+/*Enlaces*/
+a{
+    text-decoration: none;
+}
+/*Enlaces a cambiar*/
+
+/*Contenido del header*/
+.head{
+    background: var(--color-head);
+    grid-row: 1/2;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.head .menu-list{
+    display: flex;
+    gap: 2rem;
+    list-style-type: none;
+}
+.head .title {
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.head .title .bxs-ghost{
+    font-size: 30px;
+}
+/*Contenido del main*/
+.main{
+    grid-row: 2/3;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,
+    minmax(220px,1fr));
+    gap: 1rem;
+    justify-content: space-around;
+    padding: 15px;
+}
+.main section{
+    min-width: 200px; 
+    min-height: 300px;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    position: relative;
+}
+/*Boton Ejemplo*/
+.btn-example{
+    background: var(--btn-example);
+    border: none;
+    padding:10px 20px;
+    transform: rotate(0deg);
+    scale: 1;
+    transition: .3s ease;
+    border-radius: 3px;
+    
+}
+.btn-example:hover{
+    transform: rotate(-10deg);
+    scale: 1.5;
+    border-radius: 0px 5px 0px 5px;
+    background: var(--btn-exHover);
+    color: #fff;
+}
+/*____________Mi código______________*/
+/*Contenedores*/
+main section{
+    background: var(--bck-container);
+    border-radius: 10px;
+    transition: .3s ease-in-out;
+}
+main section:hover{
+    transform: rotate(-1deg) ;
+    scale: 1.05;
+}
+/*----------------*/
