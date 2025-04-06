@@ -16,6 +16,20 @@
     --btn-example:#fff;
     --btn-exHover:#e41212;
     --bck-container:#37e963;
+    --bck-btnEnlace:#ddd6d67c;
+    /*logo instagram*/
+    --instagram-purple: #8a3ab9; /* Morado */
+    --instagram-blue: #4c68d7;   /* Azul */
+    --instagram-pink: #c13584;   /* Rosa */
+    --instagram-orange: #fbad50; /* Naranja */
+    --instagram-light-yellow: #FFDC80; /* Amarillo Claro */
+    --instagram-dark-orange: #F56040; /* Naranja Oscuro */
+    --instagram-red: #FD1D1D;    /* Rojo */
+    --instagram-purple-red: #E1306C; /* Rojo Púrpura */
+    --instagram-royal-blue: #405DE6; /* Azul Real */
+    --instagram-purple-red: #D43089; /* Púrpura-Rojo */
+    --instagram-orange: #F77737;  /* Naranja */
+    --instagram-yellow: #FCAF45;  /* Amarillo */
 }
 /*__________________________-*/
 body{
@@ -50,8 +64,8 @@ a{
     justify-content: center;
 }
 
-.head .title .bxs-ghost{
-    font-size: 30px;
+.head .title .bxl-graphql{
+    font-size: 40px;
 }
 /*Contenido del main*/
 .main{
@@ -98,9 +112,61 @@ main section{
     background: var(--bck-container);
     border-radius: 10px;
     transition: .3s ease-in-out;
+    filter: drop-shadow(0 0 1px #000);
 }
 main section:hover{
     transform: rotate(-1deg) ;
     scale: 1.05;
+    filter: drop-shadow(0 0 10px #000);
+
 }
+/*Botones de enlace*/
+.item-list{
+    background:var(--bck-btnEnlace);
+    padding:10px 20px;
+    border-radius: 10px;
+    transition:all .4s ease;
+    display: flex; 
+    align-items: center;
+}
+.item-list:nth-child(1):hover{
+    --bck-btnEnlace:#eb2c2c;
+}
+.item-list:nth-child(1):hover .textEnl{
+    color: #fff;
+}
+.item-list i{
+    opacity: 0;
+}
+.item-list:nth-child(1):hover .bxl-youtube{
+    color: #fff;
+    opacity: 1;
+}   
+.item-list:nth-child(2):hover{
+    background: linear-gradient(45deg, var(--instagram-purple), var(--instagram-pink), var(--instagram-orange));
+}
+.item-list:nth-child(2):hover .textEnl{
+    color: #fff;
+
+}
+.item-list:nth-child(2):hover i{
+    color: #fff;
+    opacity: 1;
+}
+.item-list:nth-child(3):hover{
+    --bck-btnEnlace:#2ceb9b;
+
+}
+.item-list:nth-child(4):hover{
+    --bck-btnEnlace:#0a1d15;
+
+}
+.item-list:nth-child(4):hover .textEnl{
+    color: #fff;
+}
+.item-list:nth-child(4):hover i{
+    opacity: 1;
+}
+
+/*------------*/
 /*----------------*/
