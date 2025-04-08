@@ -72,7 +72,7 @@ a{
     grid-row: 2/3;
     display: grid;
     grid-template-columns: repeat(auto-fit,
-    minmax(220px,1fr));
+    minmax(290px,1fr));
     gap: 1rem;
     justify-content: space-around;
     padding: 15px;
